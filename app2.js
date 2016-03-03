@@ -41,7 +41,10 @@ var Game = {
   setSquare: function(id){
     Game.board[id].symbol = Game.playerTurn.symbol
     Game.board[id].color = Game.playerTurn.color
-    Game.playerTurn.playerSquares.pickSquare(Game.board[id])
+    Game.playerTurn.pickSquare(Game.board[id])
+    //this setsquare method will be called by an event listener and then we will
+    //update that game board piece with that player information
+    // and then the pickSquare will push it to ?
   }
   // finish game
   endGame: function(){
@@ -49,7 +52,9 @@ var Game = {
     Game.newBoard()
   }
   checkWinner: function(){
-
+    if(Game.playerTurn.playerSquares.length >= 3){
+      Game.playerTurn.player
+    }
   }
   newBoard: function(){
     Game.board = []
